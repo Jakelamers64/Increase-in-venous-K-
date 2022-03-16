@@ -23,12 +23,16 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 
 # Introduction
 
-Administering oxygen $O_2$ has been proven to be an effective treatment for many different ailments. By varying both pressure and inspired $O_2$ gas concentration, three of the main modes of $O_2$ administration are obtained which are hyperbaric $O_2$, concentrated $O_2$ and hyperbaric treatment. According the UHMS hyperbaric oxygen therapy (HBO2) is defined as exposure to near 100% $O_2$ while inside a pressurized chamber at greater than sea level pressure.1 As of July 2021 the FDA has cleared HBO2 for 13 different conditions.2 In contrast hyperbaric treatment is exposure to an increase in pressure without an increase in administer $O_2$ concentration. Finally concentrated oxygen is the exposure to $O_2$ gas with a higher concentration of $O_2$ than normal air. Even though these protocols are relatively similar their effects on the body can vary in some key ways.
+Modulation of inspired $O_2$ concentration has been used as an effectives treatment for many conditions. The two main methods to administer this concentration increase are by directly varying concentration of inspired gases or by varying the ambient pressure. By combining these to aspects of concentration, three of the main modes of $O_2$ administration are obtained. These are hyperbaric $O_2$, concentrated $O_2$ and hyperbaric treatment. According the UHMS hyperbaric oxygen therapy ($HBO_2$) is defined as exposure to near 100% $O_2$ while inside a pressurized chamber at greater than sea level pressure.[@moon_hyperbaric_2019] As of July 2021 the FDA has cleared $HBO_2$ for 13 different conditions.[@noauthor_hyperbaric_2021] In contrast hyperbaric treatment is exposure to an increase in pressure without an increase in administered gas $O_2$ concentration. Finally concentrated oxygen is the exposure to $O_2$ gas with a higher concentration of $O_2$ than normal air.
 
-Plasma potassium levels are dependent on a multitude of factors and result from the interplay of intracellular and extracellular changes as well as intake and execration rates.[@RN51] Hypoxia has been shown to cause an increase in arterial potassium levels.5 Hypoxia has also been shown to effect Voltage gated K+ channel expression in pulmonary arterial myocytes.6-7 However the effects of Hyperoxia and Hyperbaria on these channels and plasma potassium levels remains unclear.
 
-Mechanism for Plasma Potassium Changes as a Response to Oxygen
-Mechanism for Plasma Potassium Changes in Other Gases/Pressure
+Effects of hyperoxia on blood metabolites
+
+
+Effects of hyperbaria on blood metabolites
+
+
+One metabolite of interest in this study was potassium. Plasma potassium levels are dependent on a multitude of factors and result from the interplay of intracellular and extracellular changes and intake and execration rates.[@aronson_effects_2011; @adrogue_changes_1981] Regulation of these levels within normal ranges is of extreme importance to the function of various cells in the body.[@youn_recent_2009] Effects of increased inspired $O_2$ on plasma potassium remain ambiguous.[@adrogue_changes_1981] A few studies have demonstrated an increase in plasma potassium while others have found no similar increase.[@adrogue_changes_1981; @fraley_isohydric_1976] However the fact hypoxia has been shown to cause an increase in arterial potassium levels and cause changes in expression of Voltage gated K+ channel in pulmonary arterial myocytes through $HIF1-\alpha$ indicates some pathway through which potassium levels are modulated via changes in $O_2$ concentration.[@barlow_effect_1994; @whitman_endothelin-1_2008; @dong_hypoxia_2012; @semenza_regulation_2009] In contrast the effects of hyperbaria on plasma potassium levels are much less understood.
 
 # Methods
 
