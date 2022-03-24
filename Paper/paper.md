@@ -58,9 +58,9 @@ Limitations
 
 
 
-![Comparison of plasma potassium concentration before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_K+.jpeg)
+![Comparison of plasma potassium concentration before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_K+.jpg "Plasma Potassium levels in The Hyperbaric Group")
 
-![Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\conc_K+.jpeg)
+![Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\conc_K+.jpg "Plasma Potassium levels in The Concentrated Oxygen Group")
 
 ![Comparison of plasma sodium, chloride and bicarbonate concentrations and pH levels before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_ions.jpg)
 
