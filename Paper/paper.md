@@ -4,7 +4,7 @@ bibliography: bibliography.bib
 csl: american-chemical-society.csl
 ---
 
-<!---pandoc --bibliography=test.bib --citeproc -o test.pdf test.md--->
+<!---pandoc --citeproc -o paper.pdf paper.md--->
 
 Increase in venous [K+] During Hyperbaric Exposure Independent of Changes in pH or O2 Concentration
 
@@ -41,23 +41,28 @@ Effects of hyperbaria on blood metabolites
 
 # Results
 
+
+| Metabolite        | Pre               | Post                | Day 10            | Final             |
+|-------------------|-------------------|---------------------|-------------------|-------------------|
+| pH                | $7.374 \pm 0.029$ | $7.393 \pm 0.014^*$ | $7.368 \pm 0.033$ | $7.384 \pm 0.027$ |
+: Metabolite concentrations for concentrated oxygen group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05)
+
 # Discussion
 
-|      Based on the fact that the classical metabolites implicated in plasma potassium levels experienced no significant fluctuations hints at a possible novel relationship between plasma potassium and hyperbaric treatment. However, limitations of this study mean that an exact explication for the observed plasma potassium levels in the hyperbaric group was not be determined. In spite of this fact several possible explanations based on findings in the literature and conditions present in this study arose and were as follows; increase in hyperbaric chamber $CO_2$ resulting in mild respratory acidosis, increase in $N_2$ and creation of reactive nitrogen species (RNS) in tissue, potassium mediated fluctuations in vasoconstriction/dilation in resonse to changes in pressure and changes in potassium channel expression via $HIF-1\alpha$.
+|      Based on the fact that the classical metabolites implicated in plasma potassium levels experienced no significant fluctuations this hints at a possible novel relationship between plasma potassium and hyperbaric treatment. However, limitations of this study mean that an exact explication for the observed plasma potassium levels in the hyperbaric group was not be determined. In spite of this fact several possible explanations based on findings in the literature and conditions present in this study arose and were as follows: an increase in hyperbaric chamber $CO_2$ resulting in mild respratory acidosis, increase in $N_2$ and creation of reactive nitrogen species (RNS) in tissue, potassium mediated fluctuations in vasoconstriction/dilation in resonse to changes in pressure and changes in potassium channel expression via $HIF-1\alpha$.
+|      Correlations between respratory acidosis and an increase in plasma potassium have been reported with few exceptions.[@adrogue_changes_1981] During hyperbaric exprosure subjects exprienced an increase of levels of $CO_2$ by =FIXME:INSERT CO2 LEVELS IN CHAMBER==. Subject expired gases and a lack of outflow of those respired gases in the altitude sickness bags is most likely responsible for the increase in $CO_2$ observed in chamber.
 
-Limitations
-- dietary restrictions for potassium not used
-- single draw for each patient
-- difference in subjects between groups
+|      Further limitations of this study include lack of dietary restrictions on subjects, single Pre vs Post draw time point and variations between treatment cohorts.
 
 # References
 
 
-
+<!--
 ![Comparison of plasma potassium concentration before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_K+.jpg "Plasma Potassium levels in The Hyperbaric Group")
 
 ![Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\conc_K+.jpg "Plasma Potassium levels in The Concentrated Oxygen Group")
 
 ![Comparison of plasma sodium, chloride and bicarbonate concentrations and pH levels before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_ions.jpg)
 
-![Comparison of plasma sodium, chloride and bicarbonate concentrations and pH levels before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\conc_ions.jpg)
+![Comparison of plasma sodium, chloride and bicarbonate concentrations and pH levels before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-#\Figures\conc_ions.jpg)
+-->
