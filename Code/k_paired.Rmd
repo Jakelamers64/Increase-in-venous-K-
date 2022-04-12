@@ -1,0 +1,264 @@
+---
+title: "K_paired"
+author: "Jacob Lamers"
+date: "10/20/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+
+rm(list = ls())
+
+setwd("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Hyper vs Conc/Blood Gas")
+
+library(readxl)
+library(ggplot2)
+library(ggpubr)
+library(knitr)
+library(dplyr)
+
+```
+
+```{r include=FALSE}
+
+subject.blood.gas.data.raw.conc <- read_excel("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Conc/Blood Gas/Blood Gas Conc.xlsx",1)
+subject.blood.gas.data.raw.conc
+
+subject.blood.gas.data.raw.hyper <- read_excel("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Hyperbaric Arm/BloodGas/Blood Gas Analysis Jake.xlsx",3)
+subject.blood.gas.data.raw.hyper <- subject.blood.gas.data.raw.hyper[1:38,]
+subject.blood.gas.data.raw.hyper
+
+```
+
+```{r include=FALSE}
+
+subjects <- data.frame(
+  Subject.ID = c(
+    "1118",
+    "226",
+    "223",
+    "1765",
+    "1395",
+    "651",
+    "455",
+    "178",
+    "1157",
+    "1814",
+    "5001",
+    "5002",
+    "5003"
+    )
+)
+
+sample.type <- subject.blood.gas.data.raw.conc[1]
+sample.type <- sample.type[-1,]
+
+column.names <- c(
+    "Sample.Type",
+    "Subject.ID",
+    "Pre.Exposure",
+    "Post.Exposure",
+    "Day.10",
+    "Final"
+    )
+
+data.conc <- data.frame()
+
+col0 <- 2
+step <- 4
+
+for(i in seq_len(dim(subjects)[1])) {
+  # steps columns by 4 to index through each sub in excel
+  sub.data.conc <- subject.blood.gas.data.raw.conc[,(col0 + (i - 1) + (step * (i - 1))):(col0 + (i - 1) + (step * i))]
+  
+  # makes subject column include subject id in each row
+  sub.data.conc[1] <- sub.data.conc[2,1]
+  
+  # removes firs row because it is nonsense
+  sub.data.conc <- sub.data.conc[-1,]
+  
+  sub.data.conc <- cbind(sample.type,sub.data.conc)
+  
+  names(sub.data.conc) <- column.names
+  
+  data.conc <- rbind(sub.data.conc,data.conc)
+}
+
+data.conc
+
+```
+
+```{r include=FALSE}
+
+subjects <- data.frame(
+  Subject.ID = c(
+    "69",
+    "554",
+    "847",
+    "498",
+    "813",
+    "1734",
+    "529",
+    "98",
+    "861",
+    "1392",
+    "433"
+    )
+)
+
+sample.type <- subject.blood.gas.data.raw.hyper[1]
+sample.type <- sample.type[-1,]
+
+column.names <- c(
+    "Sample.Type",
+    "Subject.ID",
+    "Pre.Exposure",
+    "Post.Exposure",
+    "Day.10",
+    "Final"
+  )
+
+data.hyper <- data.frame()
+
+col0 <- 2
+step <- 4
+
+for(i in seq_len(dim(subjects)[1])) {
+  # steps columns by 4 to index through each sub in excel
+  sub.data.hyper <- subject.blood.gas.data.raw.hyper[,(col0 + (i - 1) + (step * (i - 1))):(col0 + (i - 1) + (step * i))]
+  
+  # makes subject column include subject id in each row
+  sub.data.hyper[1] <- sub.data.hyper[2,1]
+  
+  # removes firs row because it is nonsense
+  sub.data.hyper <- sub.data.hyper[-1,]
+  
+  sub.data.hyper <- cbind(sample.type,sub.data.hyper)
+  
+  names(sub.data.hyper) <- column.names
+  
+  data.hyper <- rbind(sub.data.hyper,data.hyper)
+}
+
+data.hyper
+
+```
+
+```{r echo=FALSE}
+
+sample.data.conc <- data.conc[grepl(paste0("^",'K',"$"),data.conc$Sample.Type),]
+rownames(sample.data.conc) <- c()
+sample.data.conc[sample.data.conc == 0] <- NA
+
+print("Conc. Results")
+kable(sample.data.conc[,-1],digits = 3)
+
+sample.data.hyper <- data.hyper[grepl(paste0("^",'K',"$"),data.hyper$Sample.Type),]
+rownames(sample.data.hyper) <- c()
+sample.data.hyper[sample.data.hyper == 0] <- NA
+
+print("Hyperbaric Results")
+kable(sample.data.hyper[,-1],digits = 3)
+
+```
+
+```{r echo=FALSE}
+
+d.conc <- data.frame(
+  Pre = as.double(sample.data.conc$Pre.Exposure),
+  Post = as.double(sample.data.conc$Post.Exposure)
+)
+
+print("Conc. Mean")
+d.conc %>% summarise_if(is.numeric, mean)
+print("Conc. SD")
+d.conc %>% summarise_if(is.numeric, sd)
+
+d.conc <- data.frame(
+  exposure = factor(c(rep("Pre",length(d.conc$Pre)),rep("Post",length(d.conc$Post))),levels=c("Pre","Post")),
+  value = c(d.conc$Pre,d.conc$Post)
+)
+
+stat.test <- compare_means(
+  value ~ exposure, data = d.conc,paired = TRUE
+)
+stat.test <- stat.test %>%
+ mutate(y.position = c(5.1))
+
+print("Results of paired Wilcoxon test")
+print(stat.test)
+
+p <- ggpaired(d.conc,  x = "exposure", y = "value",
+              line.color = "gray", 
+              line.size = 0.4,
+              palette = "npg",
+              ylab = "K+ (mmol/L)",
+              xlab = FALSE
+              )
+
+
+p <- p + ggtitle("Concentrated O2 Blood [K+]")
+p <- p + theme(plot.title = element_text(hjust = 0.5))
+p <- p + ylim(3.75,5.1)
+p <- p + stat_pvalue_manual(stat.test, label = "p.adj")
+
+p
+
+jpeg(file="conc_K+.jpeg")
+p
+dev.off()
+
+```
+
+
+```{r echo=FALSE}
+
+d.hyper <- data.frame(
+  Pre = as.double(sample.data.hyper$Pre.Exposure),
+  Post = as.double(sample.data.hyper$Post.Exposure)
+)
+
+print("Hyperbaric Mean")
+d.hyper %>% summarise_if(is.numeric, mean)
+print("Hyperbaric SD")
+d.hyper %>% summarise_if(is.numeric, sd)
+
+d.hyper <- data.frame(
+  exposure = factor(c(rep("Pre",length(d.hyper$Pre)),rep("Post",length(d.hyper$Post))),levels=c("Pre","Post")),
+  value = c(d.hyper$Pre,d.hyper$Post)
+)
+
+stat.test <- compare_means(
+  value ~ exposure, data = d.hyper,paired = TRUE
+)
+stat.test <- stat.test %>%
+ mutate(y.position = c(5.1))
+
+print("Results of paired Wilcoxon test")
+print(stat.test)
+
+p <- ggpaired(d.hyper, x = "exposure", y = "value",
+              line.color = "gray", 
+              line.size = 0.4,
+              palette = "npg",
+              ylab = "K+ (mmol/L)",
+              xlab = FALSE
+              )
+
+
+p <- p + ggtitle("Hyperbaric Blood [K+]")
+p <- p + theme(plot.title = element_text(hjust = 0.5))
+p <- p + ylim(3.75,5.1)
+p <- p + stat_pvalue_manual(stat.test, label = "p.adj")
+
+p
+
+jpeg(file="hyper_K+.jpeg")
+p
+dev.off()
+
+```

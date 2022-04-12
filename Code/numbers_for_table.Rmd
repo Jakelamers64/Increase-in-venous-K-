@@ -1,0 +1,261 @@
+---
+title: "K+ Hyper vs Conc"
+author: "Jacob Lamers"
+date: "8/23/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r include=FALSE}
+
+rm(list = ls())
+
+setwd("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Hyper vs Conc/Blood Gas")
+
+library(readxl)
+library(ggplot2)
+library(ggpubr)
+library(knitr)
+
+```
+
+```{r include=FALSE}
+
+subject.blood.gas.data.raw.conc <- read_excel("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Conc/Blood Gas/Blood Gas Conc.xlsx",1)
+subject.blood.gas.data.raw.conc
+
+subject.blood.gas.data.raw.hyper <- read_excel("C:/Users/jjl703/Documents/R/Hyperoxia Kent Study/Hyperbaric Arm/BloodGas/Blood Gas Analysis Jake.xlsx",3)
+subject.blood.gas.data.raw.hyper <- subject.blood.gas.data.raw.hyper[1:38,]
+subject.blood.gas.data.raw.hyper
+
+```
+
+```{r include=FALSE}
+
+subjects <- data.frame(
+  Subject.ID = c(
+    "1118",
+    "226",
+    "223",
+    "1765",
+    "1395",
+    "651",
+    "455",
+    "178",
+    "1157",
+    "1814",
+    "5001",
+    "5002",
+    "5003"
+    )
+)
+
+sample.type <- subject.blood.gas.data.raw.conc[1]
+sample.type <- sample.type[-1,]
+
+column.names <- c(
+    "Sample.Type",
+    "Subject.ID",
+    "Pre.Exposure",
+    "Post.Exposure",
+    "Day.10",
+    "Final"
+    )
+
+data.conc <- data.frame()
+
+col0 <- 2
+step <- 4
+
+for(i in seq_len(dim(subjects)[1])) {
+  # steps columns by 4 to index through each sub in excel
+  sub.data.conc <- subject.blood.gas.data.raw.conc[,(col0 + (i - 1) + (step * (i - 1))):(col0 + (i - 1) + (step * i))]
+  
+  # makes subject column include subject id in each row
+  sub.data.conc[1] <- sub.data.conc[2,1]
+  
+  # removes firs row because it is nonsense
+  sub.data.conc <- sub.data.conc[-1,]
+  
+  sub.data.conc <- cbind(sample.type,sub.data.conc)
+  
+  names(sub.data.conc) <- column.names
+  
+  data.conc <- rbind(sub.data.conc,data.conc)
+}
+
+data.conc
+
+```
+
+```{r include=FALSE}
+
+subjects <- data.frame(
+  Subject.ID = c(
+    "69",
+    "554",
+    "847",
+    "498",
+    "813",
+    "1734",
+    "529",
+    "98",
+    "861",
+    "1392",
+    "433"
+    )
+)
+
+sample.type <- subject.blood.gas.data.raw.hyper[1]
+sample.type <- sample.type[-1,]
+
+column.names <- c(
+    "Sample.Type",
+    "Subject.ID",
+    "Pre.Exposure",
+    "Post.Exposure",
+    "Day.10",
+    "Final"
+  )
+
+data.hyper <- data.frame()
+
+col0 <- 2
+step <- 4
+
+for(i in seq_len(dim(subjects)[1])) {
+  # steps columns by 4 to index through each sub in excel
+  sub.data.hyper <- subject.blood.gas.data.raw.hyper[,(col0 + (i - 1) + (step * (i - 1))):(col0 + (i - 1) + (step * i))]
+  
+  # makes subject column include subject id in each row
+  sub.data.hyper[1] <- sub.data.hyper[2,1]
+  
+  # removes firs row because it is nonsense
+  sub.data.hyper <- sub.data.hyper[-1,]
+  
+  sub.data.hyper <- cbind(sample.type,sub.data.hyper)
+  
+  names(sub.data.hyper) <- column.names
+  
+  data.hyper <- rbind(sub.data.hyper,data.hyper)
+}
+
+data.hyper$Pre.Exposure <- as.numeric(data.hyper$Pre.Exposure)
+data.hyper$Post.Exposure <- as.numeric(data.hyper$Post.Exposure)
+data.hyper$Day.10 <- as.numeric(data.hyper$Day.10)
+data.hyper$Final <- as.numeric(data.hyper$Final)
+
+print(sample.type)
+
+```
+
+# Conc data
+
+```{r echo=FALSE}
+
+for (i in sample.type$`Sample Type`) {
+  sample = i
+  cat(sample,"Start\n")
+  
+  sample.data.conc <- data.conc[grepl(paste0("^",i,"$"),data.conc$Sample.Type),][c(-1,-2)]
+  
+  rownames(sample.data.conc) <- c()
+  
+  sample.data.conc[sample.data.conc == 0] <- NA
+  
+  print(sapply(sample.data.conc, function(sample.data.conc) c("Mean"= mean(sample.data.conc,na.rm=TRUE),"Stand dev" = sd(sample.data.conc,na.rm=TRUE))))
+  
+  # Pre vs Post wilcox test
+  if ( !any(is.na(sample.data.conc$Pre.Exposure)) & !any(is.na(sample.data.conc$Post.Exposure)) ) {
+    
+      print("Post")
+      print(wilcox.test(sample.data.conc$Pre.Exposure, sample.data.conc$Post.Exposure, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+  }
+  
+  # Pre vs Day.10 wilcox test
+  if ( !any(is.na(sample.data.conc$Pre.Exposure)) & !any(is.na(sample.data.conc$Day.10)) ) {
+    
+    print("Day 10")
+    print(wilcox.test(sample.data.conc$Pre.Exposure, sample.data.conc$Day.10, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+    print("Final")
+    print(wilcox.test(sample.data.conc$Pre.Exposure, sample.data.conc$Final, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+  } else {
+    
+    sample.data.conc <- sample.data.conc[rowSums(is.na(sample.data.conc)) == 0, ]
+    
+    if ( nrow(sample.data.conc) > 0) {
+      print("Day 10")
+      print(wilcox.test(sample.data.conc$Pre.Exposure, sample.data.conc$Day.10, paired = TRUE, alternative = "two.sided",exact=FALSE))
+      
+      print("Final")
+      print(wilcox.test(sample.data.conc$Pre.Exposure, sample.data.conc$Final, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    }
+    
+  }
+  
+  cat(sample,"End\n")
+}
+
+```
+
+# Hyperbaric Data
+
+```{r echo=FALSE}
+
+for (i in sample.type$`Sample Type`) {
+  sample = i
+  cat(sample,"Start\n")
+  
+  sample.data.hyper <- data.hyper[grepl(paste0("^",i,"$"),data.hyper$Sample.Type),][c(-1,-2)]
+  
+  rownames(sample.data.hyper) <- c()
+  
+  sample.data.hyper[sample.data.hyper == 0] <- NA
+  
+  print(sapply(sample.data.hyper, function(sample.data.hyper) c("Mean"= mean(sample.data.hyper,na.rm=TRUE),"Stand dev" = sd(sample.data.hyper,na.rm=TRUE))))
+  
+  # Pre vs Post wilcox test
+  if ( !any(is.na(sample.data.hyper$Pre.Exposure)) & !any(is.na(sample.data.hyper$Post.Exposure)) ) {
+    
+      print("Post")
+      print(wilcox.test(sample.data.hyper$Pre.Exposure, sample.data.hyper$Post.Exposure, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+  }
+  
+  # Pre vs Day.10 wilcox test
+  if ( !any(is.na(sample.data.hyper$Pre.Exposure)) & !any(is.na(sample.data.hyper$Day.10)) ) {
+    
+    print("Day 10")
+    print(wilcox.test(sample.data.hyper$Pre.Exposure, sample.data.hyper$Day.10, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+    print("Final")
+    print(wilcox.test(sample.data.hyper$Pre.Exposure, sample.data.hyper$Final, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    
+  } else {
+    
+    sample.data.hyper <- sample.data.hyper[rowSums(is.na(sample.data.hyper)) == 0, ]
+    
+    if ( nrow(sample.data.hyper) > 0) {
+      print("Day 10")
+      print(wilcox.test(sample.data.hyper$Pre.Exposure, sample.data.hyper$Day.10, paired = TRUE, alternative = "two.sided",exact=FALSE))
+      
+      print("Final")
+      print(wilcox.test(sample.data.hyper$Pre.Exposure, sample.data.hyper$Final, paired = TRUE, alternative = "two.sided",exact=FALSE))
+    }
+    
+  }
+  
+  cat(sample,"End\n")
+}
+
+
+```
+
