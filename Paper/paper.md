@@ -25,15 +25,19 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 
 |       Modulation of inspired $O_2$ concentration has been used as an effectives treatment for many conditions. The two main methods to administer this concentration increase are by directly varying concentration of inspired gases or by varying the ambient pressure. By combining these to aspects of concentration, three of the main modes of $O_2$ administration are obtained. These are hyperbaric $O_2$, concentrated $O_2$ and hyperbaric treatment. According the UHMS hyperbaric oxygen therapy ($HBO_2$) is defined as exposure to near 100% $O_2$ while inside a pressurized chamber at greater than sea level pressure.[@moon_hyperbaric_2019] As of July 2021 the FDA has cleared $HBO_2$ for 13 different conditions.[@noauthor_hyperbaric_2021] In contrast hyperbaric treatment is exposure to an increase in pressure without an increase in administered gas $O_2$ concentration. Finally concentrated oxygen is the exposure to $O_2$ gas with a higher concentration of $O_2$ than normal air.
 
+Background on Plasma Potassium levels
+
+|       Plasma potassium levels are dependent on a multitude of factors and result from the interplay of intracellular and extracellular changes and intake and execration rates.[@aronson_effects_2011; @adrogue_changes_1981] Regulation of these levels within normal ranges is of extreme importance to the function of various cells in the body.[@youn_recent_2009] Effects of increased inspired $O_2$ on plasma potassium remain ambiguous.[@adrogue_changes_1981] A few studies have demonstrated an increase in plasma potassium while others have found no similar increase.[@adrogue_changes_1981; @fraley_isohydric_1976] However hypoxia has been shown to cause an increase in arterial potassium levels and cause changes in expression of Voltage gated K+ channel in pulmonary arterial myocytes through $HIF1-\alpha$ indicates some pathway through which potassium levels are modulated via changes in $O_2$ concentration.[@barlow_effect_1994; @whitman_endothelin-1_2008; @dong_hypoxia_2012; @semenza_regulation_2009] In contrast the effects of hyperbaria on plasma potassium levels are much less understood.
+
 |       The effects of long-term hyperoxia (LTH) on blood metabolites is still not entirely understood. A common finding that exists in this area presents the idea that exposure to LTH reduces the activity of voltage-gated K+ channels in lung tissue.[@zyrianova_k2p21_2020; @schwingshackl_regulation_2012] Specifically, LTH exposure downregulates TREK-1 K+ channels in alveolar tissue, which can cause an increased risk of acute lung injury. LTH exposure also plays a role in the regulation of inflammatory cytokine secretion in alveolar AT2 cells. Such lung injury can potentially cause hypoxic effects and the release of K+ into the blood as seen in such cases.  It has been proposed that the mechanism behind this increase in plasma K+ is due to the LTH exposure causing changes in action potentials (APs) on the surface of cell membranes.[@chapalamadugu_high_2015] Rapid depolarization caused by LTH exposure results in a highly positive potential present in the cell.[@zyrianova_k2p21_2020] The downregulation of K+ channels such as TREK-1 prolongs APs on the membrane surface due to K+ ions not being able to flow into the cell to repolarize the membrane. Consequently, the repolarization reserve of the action potential appears to be extended by LTH exposure, resulting in a longer repolarization time and a slower return to resting membrane potential.[@chapalamadugu_high_2015] It is widely known that depolarization of cell membranes increases the permeability of membranes to positive ions such as K+, leading to an increase in plasma K+ concentration.
 
-Effects of hyperbaria on blood metabolites
+Effects of hyperbaria on Potassium
 
-|       One metabolite of interest in this study was potassium. Plasma potassium levels are dependent on a multitude of factors and result from the interplay of intracellular and extracellular changes and intake and execration rates.[@aronson_effects_2011; @adrogue_changes_1981] Regulation of these levels within normal ranges is of extreme importance to the function of various cells in the body.[@youn_recent_2009] Effects of increased inspired $O_2$ on plasma potassium remain ambiguous.[@adrogue_changes_1981] A few studies have demonstrated an increase in plasma potassium while others have found no similar increase.[@adrogue_changes_1981; @fraley_isohydric_1976] However the fact hypoxia has been shown to cause an increase in arterial potassium levels and cause changes in expression of Voltage gated K+ channel in pulmonary arterial myocytes through $HIF1-\alpha$ indicates some pathway through which potassium levels are modulated via changes in $O_2$ concentration.[@barlow_effect_1994; @whitman_endothelin-1_2008; @dong_hypoxia_2012; @semenza_regulation_2009] In contrast the effects of hyperbaria on plasma potassium levels are much less understood.
+Effects of hypoxia on K+ channel expression via HIF-1a
 
 # Methods
 
-|       Healthy adult subjects were recruited via REDCap using university of Wisconsin's email list. A questionnaire was administered to determine characteristics of individuals such as pre-existing conditions and age. Individuals who responded to the survey were selected at random contacted via phone. Participants in the study were separated into two groups. The first group received hyperbaric treatment in altitude sickness bags (n=14) while the second group received concentrated oxygen at room pressure (n=12).
+|       Healthy adult subjects were recruited via REDCap using a University of Wisconsin's email list. A questionnaire was administered to determine characteristics of individuals such as pre-existing conditions and age. Individuals who responded to the survey were selected at random contacted via phone. Participants in the study were separated into two groups. The first group received hyperbaric treatment in altitude sickness bags (n=14) while the second group received concentrated oxygen at room pressure (n=12).
 
 |        Although treatment varied between groups, treatment schedule remained consistent and was the following. Subjects arrived Monday and height and weight were determined. Blood collected via venipuncture before treatment was used for a baseline metabolic panel and analyzed on arterial blood gas (ABG) machine. Following blood draws subjects underwent 1.5 hours of their respective treatments. After treatment blood was collected to determine acute response in blood metabolites. Following this, treatment was given Tuesday through Friday of the following week, taking a break for weekends where no treatment was administered. A blood draw and ABG analysis was preformed before the tenth and final treatment. After a weekend of no treatment following the final treatment a blood draw occurred and subsequent analysis was preformed.
 
@@ -41,11 +45,27 @@ Effects of hyperbaria on blood metabolites
 
 # Results
 
+| Metabolite        | Pre                 | Post                   | Day 10              | Final                  |
+|-------------------|---------------------|------------------------|---------------------|------------------------|
+| $pH$              | $7.374 \pm 0.029$   | $7.393 \pm 0.014^*$    | $7.368 \pm 0.033$   | $7.384 \pm 0.027$      |
+| $pCO_2$           | $48.46 \pm 5.58$    | $47.08 \pm 4.28$       | $44.68 \pm 6.32$    | $38.83 \pm  8.69^{**}$ |
+| $pO_2$            | $26.25 \pm 8.22$    | $21.79 \pm 5.16$       | $30.51 \pm 19.62$   | $26.91 \pm 10.2$       |
+| $Na$              | $139.55 \pm 0.91$   | $139.23 \pm  1.19$     | $139.36 \pm  1.66$  | $138.64 \pm   3.88$    |
+| $K+$              | $4.09 \pm 0.12$     | $4.28 \pm 0.28$        | $4.28 \pm 0.44$     | $4.29 \pm 0.27$        |
+| $Cl-$             | $106.92 \pm 1.5$    | $107.39 \pm  1.32$     | $105.13 \pm 1.76^*$ | $106.36 \pm  3.36$     |
+| $Ca+$             | $1.19 \pm 0.04$     | $1.21 \pm 0.03^*$      | $1.22 \pm 2 0.02$   |  $1.21 \pm 0.04$       |
+: Metabolite concentrations for concentrated oxygen group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05), (** < 0.001)
 
-| Metabolite        | Pre               | Post                | Day 10            | Final             |
-|-------------------|-------------------|---------------------|-------------------|-------------------|
-| pH                | $7.374 \pm 0.029$ | $7.393 \pm 0.014^*$ | $7.368 \pm 0.033$ | $7.384 \pm 0.027$ |
-: Metabolite concentrations for concentrated oxygen group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05)
+| Metabolite        | Pre                 | Post                   | Day 10              | Final                  |
+|-------------------|---------------------|------------------------|---------------------|------------------------|
+| $pH$              | $7.383 \pm 0.033$   | $7.408 \pm  0.029$     | $7.387 \pm 0.049$   | $7.387 \pm  0.037$     |
+| $pCO_2$           | $35.80 \pm 6.77$    | $34.46 \pm 4.51$       | $36.64 \pm 10.20$    | $39.29 \pm 10.04$ |
+| $pO_2$            | $42.88 \pm 22.94$    | $25.67 \pm 6.60$       | $41.64 \pm 37.39$   | $43.75 \pm 31.82$       |
+| $Na$              | $139.96 \pm 1.20$   | $139.65 \pm  1.29$     | $139.17 \pm  1.18$  | $139.37 \pm   1.28$    |
+| $K+$              | $4.19 \pm 0.26$     | $4.54 \pm 0.27$        | $4.15 \pm 0.24$     | $4.23 \pm 0.25$        |
+| $Cl-$             | $106.46 \pm 1.58$    | $106.41 \pm  1.72$     | $106.23 \pm 1.99$ | $106.17 \pm  1.99$     |
+| $Ca+$             | $1.24 \pm 0.03$     | $1.25 \pm 0.03$      | $1.22 \pm 2 0.04$   |  $1.22 \pm 0.05$       |
+: Metabolite concentrations for hyperbaric group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05), (** < 0.001)
 
 # Discussion
 
