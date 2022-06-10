@@ -1,9 +1,9 @@
 ---
 title: Increase in venous [K+] During Hyperbaric Exposure Independent of Changes in pH or O2 Concentration
 author:
-- Jacob Lamers, 
-- Kent MacLaughlin,
+- Jacob Lamers,
 - Matthew Marcou, 
+- Kent MacLaughlin, 
 - Rudolf Braun, 
 - Marlowe Eldridge
 output: pdf_document
@@ -40,7 +40,7 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 
 |       Effects of hyperoxia on plasma potassium levels remain ambiguous.[@adrogue_changes_1981] A few studies have demonstrated an increase in plasma potassium as the result of hyperoxic exposure while others have found no similar increase.[@adrogue_changes_1981; @fraley_isohydric_1976] However research has shown that hyperoxia can effect voltage-gated K+ channels in humans[@zyrianova_k2p21_2020; @schwingshackl_regulation_2012; @chapalamadugu_high_2015] One group found that long-term exposure to hyperoxia can result in a decrease in activity of voltage-gated K+ channels in lung tissue.[@zyrianova_k2p21_2020; @schwingshackl_regulation_2012] Where as another study looking at voltage-gated K+ channels of the heart and saw a signifigant reduction of oxygen-sensitive Kv1.5 potassium channel protein expression.[@chapalamadugu_high_2015] Internal potassium homeostasis and the distribution of intracellular and extracellular potassium in the body is primarily the result of ion-exchanges pumps and passive efflux.[@ingelfinger_integrated_2015; @aronson_effects_2011] Hypoxia has also been shown to cause an increase in arterial potassium levels and cause changes in expression of Voltage gated K+ channel in pulmonary arterial myocytes through $HIF1-\alpha$ indicating a potential pathway through which potassium levels are modulated via changes in $O_2$ concentration.[@barlow_effect_1994; @whitman_endothelin-1_2008; @dong_hypoxia_2012; @semenza_regulation_2009] Therefore changes in activity or expression of these channels offers a potential linkage between effects hyperoxia on plasma potassium.
 
-|       The main goal of this study was to determine the similarities and differences in effects of concentrated $O_2$ and hyperbaria on the blood metabolites, specifically plasma potassium levels.
+|        Historically, $HBO_2$ studies in mice and rats have shown that $HBO_2$ exposure reduces lung injury and can help alleviate the effects of hypoxia and hypoxemia.[@perng_effect_2004] While the mechanism for this is not entirely understood, it has been proposed that an upregulation in the activity of Na+/K+ ATPase and a subsequent increase in movement of Na+ and K+ ions inside the cells of lung tissue assists in relieving lung injury.[@harris_hyperbaric_1996] In multiple cases, hyperbaric treatment has been shown to be effective in clearing edema in the lungs.[@perng_effect_2004; @harris_hyperbaric_1996] Pulmonary edema is a common occurrence when using a SCUBA device for deep-sea diving, and hyperbaric oxygen has been an approved treatment for diving-related conditions for several years. Due to the risks that can be associated with breathing 100% $O_2$ for extended periods of time, it is worthwhile to discover if it is possible to alleviate these conditions with solely hyperbaric treatment, eliminating the harmful effects of 100% $O_2$ exposure. Literature detailing hyperbaric effects on plasma ion concentrations mostly focus on $HBO_2$. As previously mentioned exposure to hyperoxia also causes changes in plasma ion concentrations. This means studies of $HBO_2$ and its effects on these concentrations can not seperate the effects of increased pressure and increased $O_2$. The main goal of this study was to determine the similarities and differences in effects of concentrated $O_2$ and hyperbaria on the blood metabolites, specifically plasma potassium levels.
 
 # Methods
 
