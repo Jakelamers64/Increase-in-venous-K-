@@ -44,9 +44,11 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 
 # Methods
 
-|       Healthy adult subjects were recruited via REDCap using a University of Wisconsin's email list. A questionnaire was administered to determine characteristics of individuals such as pre-existing conditions and age. Individuals who responded to the survey were selected at random and contacted via phone. Participants in the study were separated into two groups. The first group received hyperbaric treatment in altitude sickness bags (n=13) while the second group received concentrated oxygen at room pressure (n=11).
+|       Healthy adult subjects were recruited via REDCap using a University of Wisconsin's email list. A questionnaire was administered to determine characteristics of individuals such as pre-existing conditions and age. Individuals who responded to the survey were selected at random and contacted via phone. Participants in the study were separated into two groups. The first group received hyperbaric treatment in altitude sickness bags (n=13) while the second group received concentrated $O_2$ at room pressure (n=11).
 
-|       Although treatment varied between groups, treatment schedule remained consistent and was the following. Subjects arrived Monday and height and weight were determined. Blood was collected via venipuncture before treatment was used for a baseline metabolic panel and analyzed on arterial blood gas (ABG) machine. Following blood draws subjects underwent 1.5 hours if in the hyperbaric arm and 1 hour if in the concentrated $O_2$ arm of their respective treatments. After treatment blood was collected to determine acute response in blood metabolites. Following this, treatment was given Tuesday through Friday of the following week, taking a break for weekends where no treatment was administered. A blood draw and ABG analysis was preformed before the tenth and final treatment and after a weekend of no treatment following the final treatment another blood draw occurred and subsequent analysis was preformed.
+|       Although treatment varied between groups, treatment schedule remained consistent as shown in figure 1. Subjects arrived Monday and height and weight were determined. Blood was collected via venipuncture before treatment was used for a baseline metabolic panel and was analyzed on arterial blood gas (ABG) machine. Following blood draws subjects underwent 1.5 hours if in the hyperbaric arm or 1 hour if in the concentrated $O_2$ arm. After treatment blood was collected to determine acute response in blood metabolites. Following this, treatment was given Tuesday through Friday of the following week, taking a break for weekends where no treatment was administered. A blood draw and ABG analysis was preformed before the tenth and final treatment and after a weekend of no treatment following the final treatment another blood draw occurred and subsequent analysis was preformed.
+
+![**Figure 1.** Outline detailing treatment schedule for both hyperbaric and hyperoxia treatment groups.](..\Figures\K+ Methods Figure.jpeg)
 
 |       A total of 36 metabolic indicators were reported by the ABG machine. Indicators were compared pairwise between the four draws. Statistical analysis and data visualization was performed using R (The R Foundation) where paired student t-tests were used for normally distributed lab results and while wilcox tests were used for the $K+$ and $HCO_3^-$ because of their skewed distributions.[@feldman_plasma_2017]
 
@@ -76,9 +78,9 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 | $HCO_3^- (mmol/L)$ | $21.5 \pm 3.3$        | $22.0 \pm 2.6$         | $22.1 \pm 4.0$          | $23.5 \pm 4.4$         |
 : Metabolite concentrations for hyperbaric group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05), (** < 0.001)
 
-![**Figure 1.** Signifigant acute increase in plasma potassium concentration before and after treatment in the hyperbaric group](..\Figures\hyper_K+.jpg)
+![**Figure 2.** Signifigant acute increase in plasma potassium concentration before and after treatment in the hyperbaric group.](..\Figures\hyper_K+.jpg)
 
-![**Figure 2.** Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](..\Figures\conc_K+.jpg)
+![**Figure 3.** Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group.](..\Figures\conc_K+.jpg)
 
 # Discussion
 
