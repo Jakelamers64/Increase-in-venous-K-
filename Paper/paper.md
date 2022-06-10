@@ -52,7 +52,7 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 
 # Results
 
-|       Tables one and two display values for classical ions of interest in potassium homeostasis for concentrated $O_2$ and hyperbaric air respectively. The concentrated $O_2$ group saw a significant increase in pH from baseline levels of $7.374 \pm 0.029$ to post-exposure levels of $7.393 \pm 0.014$(p=0.023) while the hyperbaric group saw no similar significant increase. Plasma potassium levels were significantly increased in the hyperbaric oxygen group immediately post exposure. The hyperbaric groups base line potassium levels were at $4.19 \pm 0.26$ and post-exposure levels were $4.55 \pm 0.27^{*}$.(p=0.0068). Figure one displays paired changes in plasma potassium for hyperbaric exposure. Although a few subjects show no change or slight decrease in plasma potassium a strong trend toward increase is observed. However, in figure two there is so similar trend towards increase observed with only a view subjects experiencing a marked increase in plasma potassium levels.
+|       Tables one and two display values for classical ions of interest in potassium homeostasis for concentrated $O_2$ and hyperbaric air respectively. The concentrated $O_2$ group saw a significant increase in pH from baseline levels of $7.374 \pm 0.029$ to post-exposure levels of $7.393 \pm 0.014$(p=0.023) while the hyperbaric group saw no similar significant increase. Plasma potassium levels were significantly increased in the hyperbaric oxygen group immediately post exposure when compared to thier baseline values as shown in figure one. The hyperbaric groups intial potassium levels were at $4.19 \pm 0.26$ and the post-exposure levels were $4.55 \pm 0.27^{*}$.(p=0.0068). Although a few subjects show no change or slight decrease in plasma potassium a strong trend toward increase is observed in this group. However, in figure two there is so similar trend towards increase observed with only a few subjects experiencing a increase in plasma potassium levels.
 
 | Metabolite         | Pre (n=13)          | Post (n=13)            | Day 10 (n=10)       | Final (n=9)            |
 |--------------------|---------------------|------------------------|---------------------|------------------------|
@@ -76,9 +76,9 @@ Keywords: Potassium, Hyperbarics, Hyperoxia
 | $HCO_3^- (mmol/L)$ | $21.5 \pm 3.3$        | $22.0 \pm 2.6$         | $22.1 \pm 4.0$          | $23.5 \pm 4.4$         |
 : Metabolite concentrations for hyperbaric group from pre, post, day 10 and final blood draws. Signifigance denoted by (* < 0.05), (** < 0.001)
 
-![Comparison of plasma potassium concentration before and after treatment in the hyperbaric group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\hyper_K+.jpg "Plasma Potassium levels in The Hyperbaric Group")
+![**Figure 1.** Signifigant acute increase in plasma potassium concentration before and after treatment in the hyperbaric group](..\Figures\hyper_K+.jpg)
 
-![Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](C:\Users\jakel\github\Increase-in-venous-K-\Figures\conc_K+.jpg "Plasma Potassium levels in The Concentrated Oxygen Group")
+![**Figure 2.** Comparison of plasma potassium concentration before and after treatment in the concentrated oxygen group](..\Figures\conc_K+.jpg)
 
 # Discussion
 
